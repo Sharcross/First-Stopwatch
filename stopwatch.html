@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+    <link rel="stylesheet" href="stop.css">
+</head>
+<body>
+      
+<div class="container">
+    <div class="time">
+        00:00:00
+    </div>
+    <div class="options">
+<button class="start">Start</button>
+<button class="stop">Stop</button>
+<button class="reset">Reset</button>
+    </div>
+</div>
+
+<script>
+   let ms = 00, s = 00, m = 00;
+   let counter;
+   let start = document.querySelector('.start')
+   let stop = document.querySelector('.stop')
+   let reset =  document.querySelector('.reset') 
+   let time = document.querySelector('.time')
+
+   start.addEventListener('click', function() {
+    if(!counter){
+        counter = setInterval(run, 10)
+    }
+    
+        function run() {
+            time.textContent = initialTime()
+            ms++
+            if(ms==100){
+            ms=00;
+            s++;
+            }
+            if(s==60){
+            s=00;
+            m++;
+            }
+        }
+   })
+
+   stop.addEventListener('click', function() {
+    clearInterval(counter);
+    counter = false;
+   })
+
+   reset.addEventListener('click', function() {
+    clearInterval(counter);
+    counter = false;
+    ms = 00, s = 00, m = 00
+    time.textContent = initialTime()
+   })
+
+   function initialTime() {
+    return m.toString().padStart(2, "0") + ":" + s.toString().padStart(2, "0") + ":" + ms.toString().padStart(2, "0")
+   }
+</script>
+
+</body>
+</html>
