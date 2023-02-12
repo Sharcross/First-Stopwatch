@@ -4,7 +4,7 @@
     box-sizing: border-box;
     font-family: sans-serif;
 }
-body {
+body{
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -33,18 +33,14 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 100px;
-    background: -webkit-linear-gradient(180deg, #ee0979, #ff6a00);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
+    color: rgb(88, 240, 240);
 }
 
 .start, .stop, .reset{
     font-weight: 300;
     padding: 3px 30px;
     border-radius: 40px;
-    border-color: #ff6a00;
-    background: -webkit-linear-gradient(0deg, #f3eff1, #f0eeed);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
+    border: none;
+    box-shadow: 0 0px 20px rgba(222, 225, 231, 0.5);
 }
 
